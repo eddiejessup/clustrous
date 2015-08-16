@@ -24,22 +24,22 @@ test_requirements = [
 ]
 
 extensions = [
-    NExtension("clustrous._periodic_cluster",
-               sources=["clustrous/periodic_cluster.f90"]),
+    NExtension('clustrous._periodic_cluster',
+               sources=['clustrous/periodic_cluster.f90']),
 ]
 
 setup(
     name='clustrous',
     version='0.1.0',
-    description="Linkage clustering",
+    description='Linkage clustering',
     long_description=readme + '\n\n' + history,
-    author="Elliot Marsden",
+    author='Elliot Marsden',
     author_email='elliot.marsden@gmail.com',
     url='https://github.com/eddiejessup/clustrous',
     packages=setuptools.find_packages(exclude=['docs', 'tests']),
     include_package_data=True,
     install_requires=requirements,
-    license="BSD",
+    license='BSD',
     zip_safe=False,
     keywords='clustrous',
     classifiers=[
@@ -47,7 +47,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
+        'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
