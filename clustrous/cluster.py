@@ -101,6 +101,12 @@ def biggest_cluster_fraction(clust_sizes):
     return clust_sizes.max() / float(clust_sizes.sum())
 
 
+def _clumpiness(n_cluster, n_tot):
+    frac = n_cluster / n_tot
+    clumpiness = (n_cluster - 1.0) / (n_tot - 1.0)
+    return frac * clumpiness
+
+
 def clumpiness(clust_sizes):
     """Calculate how 'clumpy' a set of clustered points are.
 
@@ -131,9 +137,7 @@ def clumpiness(clust_sizes):
     k: float
         Clumpiness measure.
     """
-    clust_fracs = clust_sizes / float(clust_sizes.sum())
-    clumpinesses = (clust_sizes - 1.0) / float(clust_sizes.sum() - 1.0)
-    return np.sum(clust_fracs * clumpinesses)
+    return np.sum(_clumpiness(clust_sizes, float(clust_sizes.sum())))
 
 
 def _get_labels(linked_list):
